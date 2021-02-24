@@ -44,9 +44,10 @@ function addSelectedItemToCart() {
     quantity = parseInt(quantity);
     // TODO: suss out the item picked from the select list
     // TODO: using those, add one item to the Cart
-    let itemAndQuantity;
+    // let itemAndQuantity;
     bagQuantity += quantity;
-    cart.
+    cart.items.push(items + ", " + quantity + "items")
+    // console.log(cart.items);
         // itemAndQuantity = items + ", " + bagQuantity
         // console.log(items);
         // console.log(quantity); 
@@ -67,14 +68,17 @@ function updateCounter() {
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {
     // TODO: Get the item and quantity from the form
-    let quantity = document.getElementById('quantity').value
-    let items = document.getElementById('items').value
-    let list = document.createElement("li")
-    list.textContent = items + ", " + quantity
-}
 
-// TODO: Add a new element to the cartContents div with that information
-let cartContet = document.getElementById('cartContents')
+    // let quantity = document.getElementById('quantity').value
+    // let items = document.getElementById('items').value
+    
+    // TODO: Add a new element to the cartContents div with that information
+    let cartContet = document.getElementById('cartContents')
+    cartContet.textContent = cart.items 
+
+    // localStorage.setItem('cartItems', JSON.stringify(cartContet))
+
+}
 
 // Set up the "submit" event listener on the form.
 // This is the trigger for the app. When a user "submits" the form, it will
