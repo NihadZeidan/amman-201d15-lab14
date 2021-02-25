@@ -8,13 +8,10 @@ let cart;
 
 
 function loadCart() {
-  const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+  let getItem = localStorage.getItem('cart')
+  const cartItems = JSON.parse(getItem) || [];
   cart = new Cart(cartItems);
-  let data = document.getElementsByTagName('tbody')
-  data.textContent = cart.items ;
-  
-  table.appendChild.data
-  console.log(data);
+
 }
 
 // Make magic happen --- re-pull the Cart, clear out the screen and re-draw it
@@ -24,12 +21,13 @@ function renderCart() {
   showCart();
 }
 
+
 // TODO: Remove all of the rows (tr) in the cart table (tbody)
 function clearCart() {
-let toRemove = document.getElementsByTagName('tr')
-toRemove.textContent= '';
+  let toRemove = document.getElementsByTagName('tbody')
+  toRemove.textContent = '';
 
-// console.log(toRemove);
+  // console.log(toRemove);
 
 }
 
@@ -37,32 +35,40 @@ toRemove.textContent= '';
 function showCart() {
 
   // TODO: Find the table body
-  let tableBody = document.getElementsByTagName('tbody')
-  table.appendChild.tableBody
+  let tableBody = document.createElement('tbody');
+  // table.appendChild.tableBody
 
   // TODO: Iterate over the items in the cart
-  for (let i = 0; i < cart.items.length ; i++ ){
+
+  function createData() {
+    for (let i = 0; i < cart.length; i++) {
+
+    }
   }
+
   // TODO: Create a TR
   let tableRow = document.createElement('tr')
+
   // TODO: Create a TD for the delete link, quantity,  and the item
+  createData();
 
-  // let tableData1 = document.createElement('td');
-  // tableData1.textContent = 'Link'
+  let tableData1 = document.createElement('td');
+  tableData1.textContent = 'Link'
 
-  // let tableData2 = document.createElement('td');
-  // tableData2.textContent = 'Quantity'
+  let tableData2 = document.createElement('td');
+  tableData2.textContent = 'Quantity'
 
-  // let tableData3 = document.createElement('td');
-  // tableData3.textContent = 'item'
+  let tableData3 = document.createElement('td');
+  tableData3.textContent = 'item'
 
   // TODO: Add the TR to the TBODY and each of the TD's to the TR
 
-  // tableRow.appendChild.tableData1;
-  // tableRow.appendChild.tableData2;
-  // tableRow.appendChild.tableData3;
-  
-  // tableBody.appendChild.tableRow
+  tableRow.appendChild.tableData1;
+  tableRow.appendChild.tableData2;
+  tableRow.appendChild.tableData3;
+
+  tableBody.appendChild.tableRow
+  table.appendChild.tableBody
 }
 
 function removeItemFromCart(event) {

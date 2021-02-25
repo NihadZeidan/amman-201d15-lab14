@@ -76,7 +76,7 @@ function updateCartPreview() {
     let cartContet = document.getElementById('cartContents')
     cartContet.textContent = cart.items 
 
-    // localStorage.setItem('cartItems', JSON.stringify(cartContet))
+    localStorage.setItem('cartItems', JSON.stringify(cartContet))
 
 }
 
